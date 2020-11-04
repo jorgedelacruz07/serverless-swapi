@@ -1,4 +1,5 @@
 # serverless-swapi
+
 A nice project with a nice description
 
 ## Install
@@ -10,7 +11,11 @@ A nice project with a nice description
 ## Running the app
 
     $ npm start
-    
+
 ## Test
 
     $ npm test
+
+## Deploy the app
+
+    $ sls deploy
