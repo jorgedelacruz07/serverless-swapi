@@ -13,4 +13,4 @@ A nice project with a nice description
     
 ## Test
 
-    $ npm run test
+    $ npm test
