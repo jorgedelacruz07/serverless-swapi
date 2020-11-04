@@ -9,7 +9,7 @@
     "deploy": "export NODE_ENV=development && yarn deploy:env",
     "test": "jest",
     "start": "serverless offline start --stage development",
-    "debug": "nodemon .\\node_modules\\serverless\\bin\\serverless.js offline --stage desa"
+    "debug": "nodemon .\\node_modules\\serverless\\bin\\serverless.js offline --stage dev"
   },
   "dependencies": {
     "axios": "^0.21.0",

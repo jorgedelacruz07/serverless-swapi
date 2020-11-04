@@ -5,41 +5,7 @@ PeopleTable:
     AttributeDefinitions:
       - AttributeName: id
         AttributeType: S
-      - AttributeName: name
-        AttributeType: S
-      - AttributeName: birth_year
-        AttributeType: S
-      - AttributeName: eye_color
-        AttributeType: S
-      - AttributeName: gender
-        AttributeType: S
-      - AttributeName: hair_color
-        AttributeType: S
-      - AttributeName: height
-        AttributeType: S
-      - AttributeName: mass
-        AttributeType: S
-      - AttributeName: skin_color
-        AttributeType: S
-      - AttributeName: homeworld
-        AttributeType: S
-      - AttributeName: films
-        AttributeType: L
-      - AttributeName: species
-        AttributeType: L
-      - AttributeName: starships
-        AttributeType: L
-      - AttributeName: vehicles
-        AttributeType: L
-      - AttributeName: url
-        AttributeType: S
-      - AttributeName: created
-        AttributeType: S
-      - AttributeName: edited
-        AttributeType: S
     KeySchema:
       - AttributeName: id
-        KeyType: HASH
-      - AttributeName: name
         KeyType: HASH
     BillingMode: PAY_PER_REQUEST
