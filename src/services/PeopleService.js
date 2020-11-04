@@ -36,7 +36,7 @@ class PeopleService {
 
   static async create(request) {
     try {
-      const params = request;
+      const params = request.data;
       const data = await peopleModel.create(params);
 
       return successResponse({
@@ -70,7 +70,7 @@ class PeopleService {
             console.log("error", e);
           });
         if (Object.keys(data).length !== 0) {
-          this.create(data);
+          this.store(data);
           return successResponse({ message: "Exito", data });
         } else {
           return errorResponse({ message: "Error Interno", data: null });
@@ -99,6 +99,21 @@ class PeopleService {
     try {
       const id = request.id;
       const data = await peopleModel.delete(id);
+
+      return successResponse({
+        message: "Exito",
+        data,
+      });
+    } catch (e) {
+      console.log("error", e);
+      return errorResponse({ message: "Error Interno", data: null });
+    }
+  }
+
+  static async store(request) {
+    try {
+      const params = request;
+      const data = await peopleModel.create(params);
 
       return successResponse({
         message: "Exito",
