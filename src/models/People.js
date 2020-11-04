@@ -13,7 +13,10 @@ class PeopleModel extends Model {
   }
 
   async create(data) {
-    // const id = uuidv4();
+    if (!data.id) {
+      const id = uuidv4();
+      data.id = id;
+    }
     // const timestamp = moment().format("X");
     const params = {
       TableName: TABLE_NAME,

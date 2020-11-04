@@ -23,10 +23,7 @@ class PeopleService {
           404
         );
       } else {
-        return successResponse({
-          message: "Exito",
-          data: data.Items,
-        });
+        return data.Items;
       }
     } catch (e) {
       console.log("error", e);
@@ -36,16 +33,15 @@ class PeopleService {
 
   static async create(request) {
     try {
-      const params = request.data;
-      const data = await peopleModel.create(params);
+      // const params = await this.search(request.data);
+      await peopleModel.create(request.data);
 
       return successResponse({
         message: "Exito",
-        data,
       });
     } catch (e) {
       console.log("error", e);
-      return errorResponse({ message: "Error Interno", data: null });
+      return errorResponse({ message: "Error Interno" });
     }
   }
 
@@ -55,7 +51,7 @@ class PeopleService {
       let data = await peopleModel.getOne(id);
 
       if (Object.keys(data).length !== 0) {
-        return successResponse({ message: "Exito", data: data.Item });
+        return data.Item;
       } else {
         console.log("Request to Swar Wars API...");
         await axios
@@ -71,7 +67,7 @@ class PeopleService {
           });
         if (Object.keys(data).length !== 0) {
           this.store(data);
-          return successResponse({ message: "Exito", data });
+          return data;
         } else {
           return errorResponse({ message: "Error Interno", data: null });
         }
@@ -123,6 +119,14 @@ class PeopleService {
       console.log("error", e);
       return errorResponse({ message: "Error Interno", data: null });
     }
+  }
+
+  static async search(request) {
+    const name = request.name;
+    const response = await axios.get(swapiURL + "/people");
+    const people = response.data.results;
+    const p = people.find((r) => r.name === name);
+    return p;
   }
 }
 
