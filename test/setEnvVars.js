@@ -1,4 +1,4 @@
-process.env.STAGE = 'dev';
+process.env.STAGE = 'develop';
 
 // DYNAMO
-process.env.TABLE = 'People_dev';
+process.env.TABLE = 'People_develop';
