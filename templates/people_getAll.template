@@ -1,0 +1,4 @@
+{
+  "action": "getAll",
+  "data": $input.json('$')
+}

@@ -1,0 +1,36 @@
+{
+  "name": "serverless-swapi",
+  "version": "1.0.0",
+  "description": "Example",
+  "author": "Jorge de la Cruz Padilla <jdelacruzp7@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "deploy:env": "sls deploy --stage $NODE_ENV",
+    "deploy": "export NODE_ENV=development && yarn deploy:env",
+    "test": "jest",
+    "start": "serverless offline start --stage development",
+    "debug": "nodemon .\\node_modules\\serverless\\bin\\serverless.js offline --stage desa"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "moment": "^2.29.1",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.784.0",
+    "eslint": "^7.12.1",
+    "jest": "^26.6.2",
+    "nodemon": "^2.0.6",
+    "serverless": "^2.9.0",
+    "serverless-offline": "^6.8.0",
+    "serverless-plugin-include-dependencies": "^4.1.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./.coverage",
+    "testTimeout": 60000,
+    "setupFiles": [
+      "./test/setEnvVars.js"
+    ]
+  }
+}

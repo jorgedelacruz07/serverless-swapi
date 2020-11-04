@@ -1,0 +1,5 @@
+{
+  "id": "$input.params('id')",
+  "action": "update",
+  "data": $input.json('$')
+}

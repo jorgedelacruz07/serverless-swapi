@@ -1,0 +1,3 @@
+environment:
+  TABLE_NAME_PEOPLE: "People"
+  SWAPI_URL: 'https://swapi.py4e.com/api'
