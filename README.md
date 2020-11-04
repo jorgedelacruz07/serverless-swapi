@@ -18,4 +18,4 @@ A nice project with a nice description
 
 ## Deploy the app
 
-    $ sls deploy
+    $ sls deploy --stage dev
